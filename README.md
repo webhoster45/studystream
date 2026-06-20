@@ -15,8 +15,7 @@ StudyStream is a lightweight full-stack app that turns academic PDF files into s
 ## Tech Stack
 
 - Frontend: HTML, Tailwind CSS, vanilla JavaScript
-- Backend: Node.js, Express
-- PDF upload: `multer`
+- Backend: Vercel serverless functions
 - Text extraction: `pdf-parse`
 
 ## Run Locally
@@ -32,23 +31,24 @@ StudyStream is a lightweight full-stack app that turns academic PDF files into s
 3. Open:
    - `http://localhost:3000/`
 
-## Deploy to Render
+## Deploy to Vercel
 
 1. Push this repo to GitHub.
-2. Go to Render and create a new `Web Service`.
-3. Connect the `webhoster45/studystream` repo.
-4. Use these settings:
-   - Build command: `npm install`
-   - Start command: `npm start`
-5. Deploy from the `main` branch.
+2. Import the repository into Vercel.
+3. Keep the default framework choice or select `Other`.
+4. Deploy the `main` branch.
+5. Vercel will serve:
+   - the landing page at `/`
+   - the upload page at `/upload`
+   - the results page at `/results`
 
-If you connect Render to this repo, the included `render.yaml` can also be used as the blueprint.
+The included `vercel.json` handles the clean URLs for those screens.
 
 ## API
 
 ### `POST /api/process`
 
-Upload a PDF using the `pdf` form field.
+Send the raw PDF file as the request body with `Content-Type: application/pdf`.
 
 Response shape:
 
@@ -76,6 +76,9 @@ Returns a basic health check payload.
 ## Project Structure
 
 ```text
+api/
+  health.js
+  process.js
 public/
   app.js
   index.html
@@ -83,6 +86,6 @@ public/
   styles.css
   upload.html
 server/
-  index.js
   processDocument.js
+vercel.json
 ```

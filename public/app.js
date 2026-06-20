@@ -99,8 +99,7 @@ function renderUploadPage() {
         return;
       }
 
-      const formData = new FormData();
-      formData.append('pdf', selectedFile);
+      const fileBuffer = await selectedFile.arrayBuffer();
       if (uploadButton) {
         uploadButton.disabled = true;
         uploadButton.textContent = 'Processing...';
@@ -108,9 +107,13 @@ function renderUploadPage() {
       if (status) status.textContent = 'Extracting text and ranking sentences...';
 
       try {
-        const response = await fetch('/api/process', {
+        const response = await fetch(`/api/process?filename=${encodeURIComponent(selectedFile.name)}`, {
           method: 'POST',
-          body: formData
+          headers: {
+            'Content-Type': 'application/pdf',
+            'X-File-Name': selectedFile.name
+          },
+          body: fileBuffer
         });
 
         const data = await response.json();
