@@ -1,0 +1,98 @@
+:root {
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: rgba(15, 23, 42, 0.12);
+  --accent: #1d4ed8;
+  --accent-soft: rgba(29, 78, 216, 0.08);
+  --accent-2: #0f766e;
+  --bg: #f4f7fb;
+  --card: rgba(255, 255, 255, 0.86);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(29, 78, 216, 0.12), transparent 34%),
+    radial-gradient(circle at top right, rgba(15, 118, 110, 0.10), transparent 28%),
+    linear-gradient(180deg, #f7faff 0%, var(--bg) 100%);
+}
+
+.glass-card {
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+}
+
+.soft-border {
+  border: 1px solid var(--line);
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(14px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.fade-up {
+  animation: fadeUp 0.55s ease both;
+}
+
+.fade-up-delay-1 {
+  animation: fadeUp 0.55s ease 0.08s both;
+}
+
+.fade-up-delay-2 {
+  animation: fadeUp 0.55s ease 0.16s both;
+}
+
+.fade-up-delay-3 {
+  animation: fadeUp 0.55s ease 0.24s both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drop-zone {
+  transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.drop-zone.is-active {
+  border-color: var(--accent);
+  background: rgba(29, 78, 216, 0.05);
+  transform: translateY(-2px);
+}
+
+.prose-line {
+  white-space: pre-wrap;
+  line-height: 1.75;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}

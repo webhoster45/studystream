@@ -1,0 +1,16 @@
+{
+  "name": "studystream",
+  "version": "1.0.0",
+  "private": true,
+  "description": "StudyStream converts academic PDFs into structured revision notes using deterministic rules.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.22.2",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1"
+  }
+}

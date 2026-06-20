@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyStream | Results</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="page-shell" data-page="results">
+  <main class="mx-auto min-h-screen w-full max-w-7xl px-6 py-8 lg:px-10">
+    <section class="fade-up glass-card rounded-[2rem] p-6 sm:p-8">
+      <div class="flex flex-col gap-4 border-b border-slate-200 pb-6 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Analysis complete</p>
+          <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl" data-result-file>Uploaded PDF</h1>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button data-upload-another class="rounded-2xl bg-slate-950 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
+            Upload another
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-3" data-stats></div>
+
+      <div class="hidden rounded-[1.75rem] border border-dashed border-slate-300 bg-white/70 p-8 text-center" data-empty-state>
+        <h2 class="text-2xl font-bold text-slate-900">No saved result found</h2>
+        <p class="mt-2 text-slate-600">Upload a PDF to generate your revision summary.</p>
+        <a href="/upload" class="mt-6 inline-flex rounded-2xl bg-slate-950 px-5 py-3 font-semibold text-white transition hover:bg-slate-800">
+          Go to upload
+        </a>
+      </div>
+    </section>
+
+    <section class="mt-8 grid gap-6 lg:grid-cols-2">
+      <article class="fade-up-delay-1 glass-card rounded-[2rem] p-6 sm:p-8">
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="text-2xl font-bold text-slate-950">Summary</h2>
+          <span class="pill bg-blue-50 text-blue-700">Short overview</span>
+        </div>
+        <p class="prose-line mt-4 text-lg text-slate-700" data-summary></p>
+      </article>
+
+      <article class="fade-up-delay-2 glass-card rounded-[2rem] p-6 sm:p-8">
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="text-2xl font-bold text-slate-950">Key Points</h2>
+          <span class="pill bg-emerald-50 text-emerald-700">Ranked sentences</span>
+        </div>
+        <ul class="mt-4 space-y-3" data-keypoints></ul>
+      </article>
+    </section>
+
+    <section class="fade-up-delay-3 mt-6 glass-card rounded-[2rem] p-6 sm:p-8">
+      <div class="flex items-center justify-between gap-4">
+        <h2 class="text-2xl font-bold text-slate-950">Definitions</h2>
+        <span class="pill bg-amber-50 text-amber-700">Definition-style lines</span>
+      </div>
+      <ul class="mt-4 space-y-3" data-definitions></ul>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

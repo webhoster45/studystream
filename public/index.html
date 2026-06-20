@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyStream | Turn PDFs into revision notes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="page-shell" data-page="landing">
+  <main class="mx-auto flex min-h-screen w-full max-w-7xl items-center px-6 py-10 lg:px-10">
+    <div class="grid w-full gap-10 lg:grid-cols-2 lg:items-center">
+      <section class="fade-up space-y-8">
+        <div class="pill bg-white/80 text-slate-700 soft-border w-fit">
+          <span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+          Built for Nigerian students
+        </div>
+        <div class="space-y-5">
+          <h1 class="max-w-xl text-5xl font-extrabold tracking-tight text-slate-950 sm:text-6xl">
+            StudyStream
+          </h1>
+          <p class="max-w-xl text-lg leading-8 text-slate-600 sm:text-xl">
+            Turn long lecture notes into structured revision content with simple rule-based processing.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button data-action="go-upload" class="rounded-2xl bg-slate-950 px-6 py-4 font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800">
+            Upload PDF
+          </button>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="glass-card rounded-3xl p-5">
+            <div class="text-sm font-semibold text-slate-500">Summaries</div>
+            <div class="mt-3 text-base font-medium text-slate-900">Concise revision notes from lecture PDFs.</div>
+          </div>
+          <div class="glass-card rounded-3xl p-5">
+            <div class="text-sm font-semibold text-slate-500">Key Points</div>
+            <div class="mt-3 text-base font-medium text-slate-900">Ranked by keywords, bullets, and repetition.</div>
+          </div>
+          <div class="glass-card rounded-3xl p-5">
+            <div class="text-sm font-semibold text-slate-500">Definitions</div>
+            <div class="mt-3 text-base font-medium text-slate-900">Sentences that look like explanations or definitions.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="fade-up-delay-1 relative">
+        <div class="hero-orb -left-10 top-8 h-28 w-28 bg-blue-300/60"></div>
+        <div class="hero-orb right-4 top-14 h-36 w-36 bg-teal-300/50"></div>
+        <div class="glass-card relative overflow-hidden rounded-[2rem] p-6 sm:p-8">
+          <div class="mb-6 flex items-center justify-between border-b border-slate-200 pb-4">
+            <div>
+              <div class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Live workflow</div>
+              <div class="mt-1 text-lg font-bold text-slate-900">PDF to revision notes</div>
+            </div>
+            <div class="rounded-full bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-700">No AI APIs</div>
+          </div>
+          <div class="space-y-4">
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-4">
+              <div class="text-sm font-semibold text-slate-500">Input</div>
+              <div class="mt-2 text-slate-800">Academic PDF uploaded from the browser.</div>
+            </div>
+            <div class="grid gap-4 md:grid-cols-2">
+              <div class="rounded-3xl border border-blue-100 bg-blue-50 p-5">
+                <div class="text-sm font-semibold text-blue-700">Key Points</div>
+                <ul class="mt-3 space-y-3 text-sm leading-6 text-slate-700">
+                  <li>Definition-style sentences rank higher.</li>
+                  <li>Bullets get a stronger score.</li>
+                  <li>Repeated ideas get nudged upward.</li>
+                </ul>
+              </div>
+              <div class="rounded-3xl border border-emerald-100 bg-emerald-50 p-5">
+                <div class="text-sm font-semibold text-emerald-700">Definitions</div>
+                <div class="mt-3 text-sm leading-6 text-slate-700">
+                  The backend extracts sentences that contain cues like "means", "refers to", and "defined as".
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="mx-auto w-full max-w-7xl px-6 pb-10 lg:px-10">
+    <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+      <div class="glass-card rounded-[2rem] p-6 sm:p-8">
+        <div class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Why StudyStream</div>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-slate-950">Designed around real student revision needs</h2>
+        <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+          The platform is built for students who need to save time, improve comprehension, and extract exam-focused content from long academic documents.
+        </p>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-3xl bg-white/80 p-5 soft-border">
+            <div class="text-sm font-semibold text-slate-500">Freemium access</div>
+            <div class="mt-2 font-medium text-slate-900">Basic revision output for free, with premium study packs for heavier use.</div>
+          </div>
+          <div class="rounded-3xl bg-white/80 p-5 soft-border">
+            <div class="text-sm font-semibold text-slate-500">Student focused</div>
+            <div class="mt-2 font-medium text-slate-900">Built for university, polytechnic, and secondary school materials.</div>
+          </div>
+          <div class="rounded-3xl bg-white/80 p-5 soft-border">
+            <div class="text-sm font-semibold text-slate-500">Fast revision</div>
+            <div class="mt-2 font-medium text-slate-900">Helps turn long notes into concise summaries, key concepts, and definitions.</div>
+          </div>
+          <div class="rounded-3xl bg-white/80 p-5 soft-border">
+            <div class="text-sm font-semibold text-slate-500">No storage</div>
+            <div class="mt-2 font-medium text-slate-900">Files are processed temporarily and discarded after analysis.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-[2rem] p-6 sm:p-8">
+        <div class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Pricing</div>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-slate-950">Simple naira plans</h2>
+        <p class="mt-4 text-lg leading-8 text-slate-600">
+          Based on the presentation's freemium model, weekly exam packs, monthly subscriptions, and pay-per-document access.
+        </p>
+        <div class="mt-6 space-y-4">
+          <div class="rounded-3xl border border-slate-200 bg-white/80 p-5">
+            <div class="flex items-baseline justify-between gap-4">
+              <div>
+                <div class="text-sm font-semibold text-slate-500">Free</div>
+                <div class="mt-1 text-xl font-bold text-slate-950">Starter</div>
+              </div>
+              <div class="text-2xl font-extrabold text-slate-950">&#8358;0</div>
+            </div>
+            <div class="mt-3 text-sm leading-6 text-slate-600">Basic summary, key points, and definitions for quick revision.</div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white/80 p-5">
+            <div class="flex items-baseline justify-between gap-4">
+              <div>
+                <div class="text-sm font-semibold text-slate-500">Weekly exam pack</div>
+                <div class="mt-1 text-xl font-bold text-slate-950">Revision Boost</div>
+              </div>
+              <div class="text-2xl font-extrabold text-slate-950">&#8358;499</div>
+            </div>
+            <div class="mt-3 text-sm leading-6 text-slate-600">For intensive exam-week study and one-off document processing.</div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white/80 p-5">
+            <div class="flex items-baseline justify-between gap-4">
+              <div>
+                <div class="text-sm font-semibold text-slate-500">Monthly subscription</div>
+                <div class="mt-1 text-xl font-bold text-slate-950">Study Pro</div>
+              </div>
+              <div class="text-2xl font-extrabold text-slate-950">&#8358;1,499</div>
+            </div>
+            <div class="mt-3 text-sm leading-6 text-slate-600">For students who upload documents regularly during the semester.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>
