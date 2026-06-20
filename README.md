@@ -32,6 +32,18 @@ StudyStream is a lightweight full-stack app that turns academic PDF files into s
 3. Open:
    - `http://localhost:3000/`
 
+## Deploy to Render
+
+1. Push this repo to GitHub.
+2. Go to Render and create a new `Web Service`.
+3. Connect the `webhoster45/studystream` repo.
+4. Use these settings:
+   - Build command: `npm install`
+   - Start command: `npm start`
+5. Deploy from the `main` branch.
+
+If you connect Render to this repo, the included `render.yaml` can also be used as the blueprint.
+
 ## API
 
 ### `POST /api/process`
